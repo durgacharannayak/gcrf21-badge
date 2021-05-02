@@ -2,7 +2,7 @@ const canvas = document.querySelector("canvas");
     const ctx = canvas.getContext("2d");
     let image = "";
     let shape = "original";
-    document.getElementById("download").style.visibility = "hidden";
+    document.getElementById("download").style.visibility = "visible";
 
     const uploadImage = () => {
       document.querySelector("input.profile-input").click();
@@ -148,12 +148,10 @@ const canvas = document.querySelector("canvas");
         ctx.fill();
       }
     };
-
     const download = () => {
-      const a = document.createElement("a");
-      const url = canvas.toDataURL("image/png;base64");
-      a.download = "badge.png";
-      a.href = url;
-
-      a.click();
-    };
+      const a = document.createElement('a')
+      const url = canvas.toDataURL('image/png;base64')
+      a.download = 'badge.png'
+      a.href = url
+      a.click()
+    }
